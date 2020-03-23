@@ -1,15 +1,19 @@
 package com.example.actorList;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@CrossOrigin(origins = {"http://localhost:8383", "http://localhost:4200"})
 @RequestMapping("/")  // all the request like http://localhost:8080/
 public class ActorListController {
 	
@@ -55,4 +59,18 @@ public class ActorListController {
 	}
 
 	
+	// response
+	@RequestMapping(value="/testUrl", method=RequestMethod.POST)
+	public @ResponseBody List<Actor> testPostFromAngular(Actor actor)
+	{
+		System.out.println("// **************");
+		System.out.println("Request from angular app received: " + actor.getCompleteName() + " - " + actor.getDetail());
+		System.out.println("// **************");
+		
+		List<Actor> result = new ArrayList<Actor>();
+		result.add(new Actor("Test name", "Test detail"));
+		result.add(new Actor("Test name 2", "Test detail 2"));
+		
+		return result;
+	}
 }

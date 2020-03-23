@@ -20,6 +20,14 @@ public class Actor {
 	private String detail;
 	private String watcher; // who has watched a film for this actor
 	
+	// CHECK !!!!!!!!!!!!!!
+	// constructor
+	public Actor(String completeName, String detail)
+	{
+		this.completeName = completeName;
+		this.detail = detail;
+	}
+	
 	
 	// getter and setters methods  -> ALT + Shift + S
 	public Long getId() {

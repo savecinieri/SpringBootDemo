@@ -68,8 +68,8 @@ public class ActorListController {
 		System.out.println("// **************");
 		
 		List<Actor> result = new ArrayList<Actor>();
-		result.add(new Actor("Test name", "Test detail"));
-		result.add(new Actor("Test name 2", "Test detail 2"));
+		result.add(new Actor("Test name", "Test detail", ""));
+		result.add(new Actor("Test name 2", "Test detail 2", ""));
 		
 		return result;
 	}

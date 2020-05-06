@@ -22,12 +22,31 @@ public class Actor {
 	
 	// CHECK !!!!!!!!!!!!!!
 	// constructor
-	public Actor(String completeName, String detail)
+	/*public Actor(String completeName, String detail)
 	{
 		this.completeName = completeName;
 		this.detail = detail;
+	}*/
+	
+	public Actor(){}
+	
+	// for fake data
+	public Actor(String completeName, String detail, String watcher)
+	{
+		this.completeName = completeName;
+		this.detail = detail;
+		this.watcher = watcher;
 	}
 	
+	/*
+	public Actor(Long id, String completeName, String detail, String watcher)
+	{
+		this.id = id;
+		this.completeName = completeName;
+		this.detail = detail;
+		this.watcher = watcher;
+	}
+	*/
 	
 	// getter and setters methods  -> ALT + Shift + S
 	public Long getId() {
